@@ -9,7 +9,7 @@
                     <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
                 </button>
 
-                <nav :class="{'nav-active' : hamburgerToggler}" class="fixed overflow-auto bottom-0 shadow-black bg-white lg:bg-opacity-0 transition-all -right-full shadow-md top-12   duration-700 w-full lg:w-full lg:static lg:-mr-10 xl:mr-20 lg:shadow-none  lg:overflow-visible ">
+                <nav :class="{'nav-active' : hamburgerToggler}" class="fixed overflow-auto bottom-0  bg-white lg:bg-opacity-0 transition-all -right-full shadow-md top-12 duration-700 w-full lg:w-full lg:static lg:-mr-10 xl:mr-20 lg:shadow-none  lg:overflow-visible ">
                     <ul class="lg:flex ">
                             <li class="list-nav" v-on:click="isClass=!isClass, isAbout=false, isSupport=false">
                                 <p>Kelas</p>
