@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* header start */
+.hamburger-line{
+    @apply my-1 block h-[2px] w-[20px] bg-[#2557a7];
+}
+
+.hamburger-active > span:nth-child(1){
+    @apply rotate-[40deg];
+}
+
+.hamburger-active > span:nth-child(2) {
+    @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+    @apply -rotate-[40deg];
+}
+
+.nav-active {
+    @apply right-0 translate-x-0;
+}
+
+.list-nav{
+    @apply lg:mr-10 flex p-4 font-sans w-full text-sm font-bold cursor-pointer text-slate-700;
+}
+
+.arrow-down{
+    @apply absolute right-4 lg:relative lg:ml-5 lg:-mt-[2px] lg:-right-1;
+}
+
+.list-nav-sub{
+    @apply relative block bg-slate-50 -left-1 font-sans text-sm font-bold lg:flex lg:absolute lg:top-20 lg:p-5 lg:bg-white;
+}
+/* header end */
+
+/* .list-dropdown {
+    @apply dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 cursor-pointer;
+} */

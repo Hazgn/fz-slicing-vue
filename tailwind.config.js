@@ -5,9 +5,13 @@ module.exports = {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#1f498b'
+      }
+    },
   },
   plugins: [
-    require("daisyui")
+    // require("daisyui")
   ],
 }
