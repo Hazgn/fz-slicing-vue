@@ -9,11 +9,11 @@
                     <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
                 </button>
 
-                <nav :class="{'nav-active' : hamburgerToggler}" class="fixed overflow-auto bottom-0 bg-white lg:bg-opacity-0 transition -right-full shadow-md top-12  duration-700 w-full lg:w-full lg:static lg:-mr-10 xl:mr-20 lg:shadow-none  lg:overflow-visible ">
+                <nav :class="{'nav-active' : hamburgerToggler}" class="fixed overflow-auto bottom-0 shadow-black bg-white lg:bg-opacity-0 transition-all -right-full shadow-md top-12   duration-700 w-full lg:w-full lg:static lg:-mr-10 xl:mr-20 lg:shadow-none  lg:overflow-visible ">
                     <ul class="lg:flex ">
                             <li class="list-nav" v-on:click="isClass=!isClass, isAbout=false, isSupport=false">
                                 <p>Kelas</p>
-                                <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 lg:-rotate-0' : isClass}"/>
+                                <ArrowDownComponent class="arrow-down transition duration-300" :class="{'-rotate-180 lg:-rotate-0' : isClass}"/>
                             </li>
                                 <div :class="{'list-nav-sub' : isClass}" class="hidden">
                                     <ul class="p-5 text-slate-400">Bootcamp
@@ -34,18 +34,18 @@
                                 </div>
                             <li class="list-nav" v-on:click="isSupport=!isSupport, isClass=false, isAbout=false">
                                 <p>Dukungan</p>
-                                <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 lg:-rotate-0' : isSupport}"/>
+                                <ArrowDownComponent class="arrow-down transition duration-300" :class="{'-rotate-180 lg:-rotate-0' : isSupport}"/>
                             </li>
                             <div :class="{'list-nav-sub' : isSupport}" class="hidden">
                                     <ul class="pl-5">
                                         <li class="pt-5 text-slate-700 cursor-pointer">Cicilan Setelah Kerja (ISA)</li>
                                         <li class="pt-5 text-slate-700 cursor-pointer">Career Ready</li>
-                                        <li class="pt-5 text-slate-700 cursor-pointer">FAQ</li>
+                                        <li class="pt-5 pb-5 lg:pb-0 text-slate-700 cursor-pointer">FAQ</li>
                                     </ul>
                                 </div>
                             <li class="list-nav" v-on:click="isAbout=!isAbout, isSupport=false, isClass=false">
                                 <p>Tentang</p>
-                                <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 lg:-rotate-0' : isAbout}"/>
+                                <ArrowDownComponent class="arrow-down transition duration-300" :class="{'-rotate-180 lg:-rotate-0' : isAbout}"/>
                             </li>
                             <div :class="{'list-nav-sub' : isAbout}" class="hidden">
                                     <ul class="p-5 text-slate-400">Alumni
