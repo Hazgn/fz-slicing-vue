@@ -24,7 +24,7 @@
 }
 
 .list-nav{
-    @apply lg:mr-10 flex p-4 font-sans w-full text-sm font-bold cursor-pointer text-slate-700;
+    @apply lg:mr-12 flex p-4 lg:pl-0 font-sans w-full text-sm font-bold cursor-pointer text-slate-700;
 }
 
 .arrow-down{
