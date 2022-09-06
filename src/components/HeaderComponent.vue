@@ -13,7 +13,7 @@
                     <ul class="lg:flex ">
                             <li class="list-nav" v-on:click="isClass=!isClass, isAbout=false, isSupport=false">
                                 <p>Kelas</p>
-                                <ArrowDownComponent class="arrow-down"/>
+                                <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 lg:-rotate-0' : isClass}"/>
                             </li>
                                 <div :class="{'list-nav-sub' : isClass}" class="hidden">
                                     <ul class="p-5 text-slate-400">Bootcamp
@@ -34,7 +34,7 @@
                                 </div>
                             <li class="list-nav" v-on:click="isSupport=!isSupport, isClass=false, isAbout=false">
                                 <p>Dukungan</p>
-                                <ArrowDownComponent class="arrow-down"/>
+                                <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 lg:-rotate-0' : isSupport}"/>
                             </li>
                             <div :class="{'list-nav-sub' : isSupport}" class="hidden">
                                     <ul class="pl-5">
@@ -45,7 +45,7 @@
                                 </div>
                             <li class="list-nav" v-on:click="isAbout=!isAbout, isSupport=false, isClass=false">
                                 <p>Tentang</p>
-                                <ArrowDownComponent class="arrow-down"/>
+                                <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 lg:-rotate-0' : isAbout}"/>
                             </li>
                             <div :class="{'list-nav-sub' : isAbout}" class="hidden">
                                     <ul class="p-5 text-slate-400">Alumni
