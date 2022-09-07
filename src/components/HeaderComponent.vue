@@ -1,7 +1,7 @@
 <template>
     <header class="sticky top-0 z-10 bg-white shadow-md p-[16px] lg:px-20 lg:pt-7 lg:pb-7">
         <div class="flex items-center justify-between">
-            <img :src="require('@/assets/svg/fazztrack-logo.svg')" alt="logo" />
+            <img :src="Image" alt="logo" />
             <div class="flex items-center absolute right-5">
                 <button class="lg:hidden" :class="{'hamburger-active' : hamburgerToggler}" v-on:click="hamburgerToggler=!hamburgerToggler">
                     <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
