@@ -1,6 +1,6 @@
 <template>
   <HeaderComponent/>
-  <RouterView class="pl-5 pr-5 lg:pr-20 lg:pl-20 " />
+  <RouterView />
   <FooterComponent/>
 </template>
 

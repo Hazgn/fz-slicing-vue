@@ -16,14 +16,14 @@
                                 <ArrowDownComponent class="arrow-down transition duration-300" :class="{'-rotate-180 lg:-rotate-0' : isClass}"/>
                             </li>
                                 <div :class="{'list-nav-sub' : isClass}" class="hidden">
-                                    <ul class="p-5 text-slate-400">
+                                    <ul class="p-5 text-slate-400 lg:border-r-[1px] lg:border-slate-300">
                                         <p>Bootcamp</p>
                                         <li class="mt-5 text-slate-700 cursor-pointer">Fullstack Mobile</li>
                                         <li class="mt-5 text-slate-700 cursor-pointer">Fullstack Website</li>
                                         <li class="mt-5 text-slate-700 cursor-pointer">Backend Javaspring</li>
                                         <li class="mt-5 text-slate-700 cursor-pointer">Backend Golang</li>
                                     </ul>
-                                    <ul class="p-5 text-slate-400">
+                                    <ul class="p-5 text-slate-400 lg:border-r-[1px] lg:border-slate-300">
                                         <p>MINI BOOTCAMP</p>
                                         <li class="mt-5 text-slate-700 cursor-pointer">Digital Marketing</li>
                                         <li class="mt-5 text-slate-700 cursor-pointer">QA Automation Engineer</li>
@@ -51,7 +51,7 @@
                                 <ArrowDownComponent class="arrow-down transition duration-300" :class="{'-rotate-180 lg:-rotate-0' : isAbout}"/>
                             </li>
                             <div :class="{'list-nav-sub lg:ml-80' : isAbout}" class="hidden">
-                                    <ul class="p-5 text-slate-400">Alumni
+                                    <ul class="p-5 text-slate-400 lg:border-r-[1px] lg:border-slate-300">Alumni
                                         <li class="mt-5 text-slate-700 cursor-pointer">Cerita Alumni</li>
                                     </ul>
                                     <ul class="p-5 text-slate-400">Fazztrack
