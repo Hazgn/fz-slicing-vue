@@ -7,7 +7,7 @@
                 <p class="lg:w-[80%] text-sm pt-3 text-slate-500">Fazztrack adalah program pelatihan yang berkomitmen untuk mencetak developer yang profesional dan memberikan kesempatan untuk berkarir di perusahaan ternama.</p>
             </div>
 
-            <div class="flex justify-between w-screen flex-wrap lg:flex-nowrap">
+            <div class="flex justify-between w-full flex-wrap lg:flex-nowrap">
                 <div class="">
                     <p class="text-base font-bold">Kelas</p>
                     <p class="mt-1 mb-1 text-sm text-slate-500">Fullstack Mobile</p>

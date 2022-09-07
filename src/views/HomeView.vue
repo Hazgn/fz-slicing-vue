@@ -24,13 +24,13 @@
                </svg>
                <p class="text-sm ml-3 font-bold text-slate-700 w-24 lg:w-auto">Supportive Trainer</p>
             </div>
-            <div class="flex items-center">
+            <div class="flex mb-5 items-center lg:mb-0">
                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8 bg-slate-400 p-1 rounded-full">
                <path fill-rule="evenodd" d="M6.28 5.22a.75.75 0 010 1.06L2.56 10l3.72 3.72a.75.75 0 01-1.06 1.06L.97 10.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0zm7.44 0a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L17.44 10l-3.72-3.72a.75.75 0 010-1.06zM11.377 2.011a.75.75 0 01.612.867l-2.5 14.5a.75.75 0 01-1.478-.255l2.5-14.5a.75.75 0 01.866-.612z" clip-rule="evenodd" />
                </svg>
                <p class="text-sm ml-3 font-bold text-slate-700 w-28 lg:w-auto">Kurikulum Sesuai Industri</p>
             </div>
-            <div class="flex items-center mb-5 lg:mb-0">
+            <div class="flex items-center">
                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-8 h-8 bg-slate-400 p-1 rounded-full">
                <path fill-rule="evenodd" d="M6 3.75A2.75 2.75 0 018.75 1h2.5A2.75 2.75 0 0114 3.75v.443c.572.055 1.14.122 1.706.2C17.053 4.582 18 5.75 18 7.07v3.469c0 1.126-.694 2.191-1.83 2.54-1.952.599-4.024.921-6.17.921s-4.219-.322-6.17-.921C2.694 12.73 2 11.665 2 10.539V7.07c0-1.321.947-2.489 2.294-2.676A41.047 41.047 0 016 4.193V3.75zm6.5 0v.325a41.622 41.622 0 00-5 0V3.75c0-.69.56-1.25 1.25-1.25h2.5c.69 0 1.25.56 1.25 1.25zM10 10a1 1 0 00-1 1v.01a1 1 0 001 1h.01a1 1 0 001-1V11a1 1 0 00-1-1H10z" clip-rule="evenodd" />
                <path d="M3 15.055v-.684c.126.053.255.1.39.142 2.092.642 4.313.987 6.61.987 2.297 0 4.518-.345 6.61-.987.135-.041.264-.089.39-.142v.684c0 1.347-.985 2.53-2.363 2.686a41.454 41.454 0 01-9.274 0C3.985 17.585 3 16.402 3 15.055z" />
@@ -60,9 +60,29 @@
          </div>
       </section>
 
-      <section class="p-5 lg:p-20">
+      <section class="p-5 lg:p-20 lg:pb-5">
          <p class="text-center text-xl font-bold lg:text-2xl">Pilihan Bootcamp Fazztrack</p>
          <p class="text-center text-xs lg:text-lg text-slate-700">Bootcamp dilaksanakan berdasarkan kurikulum yang telah disusun untuk kamu siap bekerja.</p>
+         <div class="md:flex md:justify-between md:flex-wrap">
+            <div v-for="(curicurumArr, idx) in curicurumArr" :key="idx">
+               <CardSelectBootcampComponent :image="curicurumArr.image" :title="curicurumArr.title" :desc="curicurumArr.desc" class="mt-4" />
+            </div>
+         </div>
+      </section>
+
+      <section class="p-5 lg:p-20 ">
+         <div class="bg-slate-200 p-10">
+            <div class="md:flex flex-row-reverse">
+               <img :src="require('@/assets/svg/minicamp.svg')" alt="" />
+              <div>
+                  <p class="font-bold text-center pt-4 md:pt-0 md:text-left md:text-xl lg:text-2xl">Tidak memiliki banyak waktu?</p>
+                  <p class="text-center text-sm pt-4 text-slate-700 md:text-left md:text-xl md:pb-4 md:w-[90%]">Coba program terbaru Fazztrack Mini Bootcamp! Belajar dengan menyesuaikan waktumu dan bisa langsung disalurkan kerja.</p>
+                  <div class="flex justify-center md:inline pt-4">
+                     <button class="bg-primary p-5 rounded-md text-sm text-white">Lihat Mini Bootcamp</button>
+                  </div>
+              </div>
+            </div>
+         </div>
       </section>
       
    </main>
@@ -71,19 +91,45 @@
 <script>
    import cardSvg from '@/assets/json/dummy/cardSvg'
    import mitra from '@/assets/json/dummy/mitra'
+   import CardSelectBootcampComponent from '@/components/CardSelectBootcampComponent.vue'
 export default{
-   data(){
-      return {
-         cardSvg,
-         mitra
-      }
-   },
-   setup(){
+      data() {
+         return {
+            cardSvg,
+            mitra
+         };
+      },
+      setup() {
 
-      return{
-         
-      }
+      const curicurumArr = [
+         {
+            title:"Fullstack Mobile",
+            image:"fullstackMobile.png",
+            desc: "Mempelajari bagaimana membangun aplikasi mobile dengan Javascript dari tahap perancangan selama 3 bulan pembelajaran secara online."
+         },
+         {
+            title:"Fullstack Website",
+            image:"fullstackWebsite.png",
+            desc:"Mempelajari bagaimana membangun aplikasi website dari tahap perancangan sampai testing selama 3 bulan pembelajaran secara online."
+         },
+         {
+            title:"Backend Javaspring",
+            image:"backendJavaspring.png",
+            desc:"Membangun aplikasi fullstack dengan React serta Spring Boot sebagai backend selama 3 bulan pembelajaran secara online."
+         },
+         {
+            title:"Backend Golang",
+            image:"backendGolang.png",
+            desc:"Membangun aplikasi fullstack dengan Javascript dan Golang serta otomasi sistem untuk membantu proses development lebih cepat."
+         }
+      ]
+
+         return {
+         curicurumArr
+      };
+   },
+   components: { 
+      CardSelectBootcampComponent
    }
-   
 }
 </script>
