@@ -78,7 +78,7 @@
                   <p class="font-bold text-center pt-4 md:pt-0 md:text-left md:text-xl lg:text-2xl">Tidak memiliki banyak waktu?</p>
                   <p class="text-center text-sm pt-4 text-slate-700 md:text-left md:text-xl md:pb-4 md:w-[90%]">Coba program terbaru Fazztrack Mini Bootcamp! Belajar dengan menyesuaikan waktumu dan bisa langsung disalurkan kerja.</p>
                   <div class="flex justify-center md:inline pt-4">
-                     <button class="bg-primary p-5 rounded-md text-sm text-white">Lihat Mini Bootcamp</button>
+                     <button class="bg-primary p-3 rounded-md text-sm text-white hover:bg-[#2557a7]">Lihat Mini Bootcamp</button>
                   </div>
                </div>
             </div>
@@ -129,7 +129,85 @@
             </div>
          </div>
       </section>
-      
+
+      <section class="p-5 lg:p-20">
+         <p class="text-center text-2xl font-bold">Pertanyaan Yang Sering Ditanyakan</p>
+         <p class="text-center text-xl text-slate-700">Bootcamp dilaksanakan berdasarkan kurikulum yang telah disusun untuk kamu siap bekerja.</p>
+         
+         <div class="border-2 p-5 rounded-md shadow-md mt-5 cursor-pointer transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 z-10" v-on:click="isCondition=!isCondition, isHiring=false, isStages=false, isProsesCov=false, isTrain=false" :class="{'bg-primary' : isCondition}">
+            <div class="flex justify-between">
+               <p class="font-bold" :class="{'text-white' : isCondition}">Syarat untuk mengikuti program pelatihan Fazztrack apa saja kak?</p>
+               <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 text-white' : isCondition}" />
+            </div>
+            <div v-if="isCondition" class="pt-5">
+               <ul class="text-white">
+                  <li>- Pria maupun wanita dengan usia 17 - 28 tahun,</li>
+                  <li>- Tidak terikat kontrak dengan perusahan manapun,</li>
+                  <li>- Tidak dalam masa kuliah ataupun sekolah (kecuali semester 8),</li>
+                  <li>- Siap bekerja di perusahaan rekanan Fazztrack.</li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="border-2 p-5 rounded-md shadow-md mt-5 cursor-pointer transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 z-10" v-on:click="isStages=!isStages, isCondition=false, isHiring=false, isProsesCov=false, isTrain=false" :class="{'bg-primary' : isStages}">
+            <div class="flex justify-between">
+               <p class="font-bold" :class="{'text-white' : isStages}">Bagaimana tahapan program pelatihan ini?</p>
+               <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 text-white' : isStages}" />
+            </div>
+            <div v-if="isStages" class="pt-5">
+               <ul class="text-white">
+                  <li>Pendaftaran > Tes dan Interview secara online > Proses Pelatihan > Tes dan Interview kerja > Bekerja</li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="border-2 p-5 rounded-md shadow-md mt-5 cursor-pointer transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 z-10" v-on:click="isTrain=!isTrain, isCondition=false, isHiring=false, isStages=false, isProsesCov=false" :class="{'bg-primary' : isTrain}">
+            <div class="flex justify-between">
+               <p class="font-bold" :class="{'text-white' : isTrain}">Sistem tesnya bagaimana kak?</p>
+               <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 text-white' : isTrain}" />
+            </div>
+            <div v-if="isTrain" class="pt-5">
+               <ul class="text-white">
+                  <li>Nantinya akan dilaksanakan tes secara online di domisili masing-masing. Soal akan dikirim di grup discord jam 09.00 pada hari Senin, sesuai jadwal tes yang tertera di fazztrack.com/bootcamp</li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="border-2 p-5 rounded-md shadow-md mt-5 cursor-pointer transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 z-10" v-on:click="isHiring=!isHiring, isCondition=false, isStages=false, isProsesCov=false, isTrain=false" :class="{'bg-primary' : isHiring}">
+            <div class="flex justify-between">
+               <p class="font-bold" :class="{'text-white' : isHiring}">Bagaimana proses penyaluran kerja di Fazztrack?</p>
+               <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 text-white' : isHiring}" />
+            </div>
+            <div v-if="isHiring" class="pt-5">
+               <ul class="text-white">
+                  <li>Pada pekan akhir pelatihan, kamu akan diberi tugas untuk membuat CV. Kemudian CV tersebut akan disalurkan oleh Fazztrack ke perusahaan rekanan kami. Jika CV kamu terpilih, kami akan menjadwalkan tes maupun interview dengan perusahaan tersebut. Jangan khawatir jika kamu belum terpanggil interview karena Fazztrack akan selalu membantu kamu untuk disalurkan kerja ke perusahaan yang lain.</li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="border-2 p-5 rounded-md shadow-md mt-5 cursor-pointer transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 z-10" v-on:click="isProsesCov=!isProsesCov, isCondition=false, isHiring=false, isStages=false, isTrain=false" :class="{'bg-primary' : isProsesCov}">
+            <div class="flex justify-between">
+               <p class="font-bold" :class="{'text-white' : isProsesCov}">Bagaimana proses pelatihan saat pandemi COVID-19?</p>
+               <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 text-white' : isProsesCov}" />
+            </div>
+            <div v-if="isProsesCov" class="pt-5">
+               <ul class="text-white">
+                  <li>Pelatihan diadakan secara online saat pandemi COVID-19.</li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="mt-20 flex justify-center">
+            <button class="p-3 border-2 text-sm font-bold text-slate-700 hover:bg-slate-200 rounded-md">Lihat Selengkapnya</button>
+         </div>
+      </section>
+
+      <section class="bg-[#fef3ec] p-5 lg:p-20">
+         <p class="text-2xl text-center font-bold">Tunggu Apa Lagi? Gabung Bersama Kami!</p>
+         <div class="flex justify-center mt-10">
+            <button class="bg-secondary p-3 rounded-md text-white font-bold hover:bg-orange-500">Daftar Sekarang</button>
+         </div>
+      </section>
    </main>
 </template>
 
@@ -141,12 +219,18 @@
    import CardSuperiorityComponent from '@/components/CardSuperiorityComponent.vue'
    import CardAlumniComponent from '@/components/CardAlumniComponent.vue'
    import CardStoryAlumniComponent from '@/components/CardStoryAlumniComponent.vue'
+   import ArrowDownComponent from '@/components/ArrowDownComponent.vue'
 export default{
       data() {
          return {
             cardSvg,
             mitra,
-            alumni
+            alumni,
+            isCondition: false,
+            isStages: false,
+            isTrain:false,
+            isHiring:false,
+            isProsesCov:false
          };
       },
       setup() {
@@ -221,7 +305,8 @@ export default{
       CardSelectBootcampComponent,
       CardSuperiorityComponent,
       CardAlumniComponent,
-      CardStoryAlumniComponent
+      CardStoryAlumniComponent,
+      ArrowDownComponent
    }
 }
 </script>
