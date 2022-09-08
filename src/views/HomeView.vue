@@ -3,8 +3,8 @@
       <section class="lg:flex lg:flex-col-reverse pl-5 pr-5 lg:pr-20 lg:pl-20">
 
             <div class="flex justify-center relative lg:-top-60 lg:justify-end">
-               <div v-for="(cardSvg, idx) in cardSvg" :key="idx">
-                  <img :src="require(`@/assets/svg/${cardSvg.name}.svg`)" alt="avatar" :class="'image-hero-'+idx"  />
+               <div v-for="(data, idx) in cardSvg" :key="idx">
+                  <img :src="require(`@/assets/svg/${data.name}.svg`)" alt="avatar" :class="'image-hero-'+idx"  />
                </div>
             </div>
 
@@ -53,8 +53,8 @@
          </div>
          
          <div class="flex flex-wrap p-1 items-center justify-between lg:p-10">
-            <div v-for="(mitra, idx) in mitra" :key="idx">
-               <img :src="mitra.image" alt="logo" class="h-24 w-24 lg:h-auto lg:w-auto lg:p-3" />
+            <div v-for="(data, idx) in mitra" :key="idx">
+               <img :src="data.image" alt="logo" class="h-24 w-24 lg:h-auto lg:w-auto lg:p-3" />
             </div>
             <p class="text-2xl font-bold p-6">600+</p>
          </div>
@@ -64,8 +64,8 @@
          <p class="text-center text-xl font-bold lg:text-2xl">Pilihan Bootcamp Fazztrack</p>
          <p class="text-center text-xs lg:text-lg text-slate-700">Bootcamp dilaksanakan berdasarkan kurikulum yang telah disusun untuk kamu siap bekerja.</p>
          <div class="md:flex md:justify-between md:flex-wrap">
-            <div v-for="(curicurumArr, idx) in curicurumArr" :key="idx">
-               <CardSelectBootcampComponent :image="curicurumArr.image" :title="curicurumArr.title" :desc="curicurumArr.desc" class="mt-4" />
+            <div v-for="(data, idx) in curicurumArr" :key="idx">
+               <CardSelectBootcampComponent :image="data.image" :title="data.title" :desc="data.desc" class="mt-4" />
             </div>
          </div>
       </section>
@@ -74,15 +74,39 @@
          <div class="bg-slate-200 p-10">
             <div class="md:flex flex-row-reverse">
                <img :src="require('@/assets/svg/minicamp.svg')" alt="" />
-              <div>
+               <div>
                   <p class="font-bold text-center pt-4 md:pt-0 md:text-left md:text-xl lg:text-2xl">Tidak memiliki banyak waktu?</p>
                   <p class="text-center text-sm pt-4 text-slate-700 md:text-left md:text-xl md:pb-4 md:w-[90%]">Coba program terbaru Fazztrack Mini Bootcamp! Belajar dengan menyesuaikan waktumu dan bisa langsung disalurkan kerja.</p>
                   <div class="flex justify-center md:inline pt-4">
                      <button class="bg-primary p-5 rounded-md text-sm text-white">Lihat Mini Bootcamp</button>
                   </div>
-              </div>
+               </div>
             </div>
          </div>
+      </section>
+
+      <section class="bg-primary">
+      <div class="p-5 lg:p-20 md:flex flex-wrap md:justify-between">
+            <div>
+               <p class="text-white font-bold text-center md:text-left md:text-2xl">Keunggulan Fazztrack</p>
+               <p class="text-white text-sm text-center md:text-left md:text-xl md:w-60">Bootcamp Fazztrack akan membimbing kamu menjadi Software Engineer profesional sampai di salurkan kerja.</p>
+            </div>
+               <div v-for="(data, idx) in superiorityArr" :key="idx" :class="idx >= 2 ? 'md:mt-5' : ''">
+                  <CardSuperiorityComponent :title="data.title" :image="data.image" :desc="data.desc" :class="idx === 3 ? 'mr-10' : ''"  />
+               </div>
+            </div>
+      </section>
+
+      <section class="bg-[#fef3ec] p-5 lg:p-20">
+         <div class="flex justify-center md:justify-start items-center">
+            <p class="text-2xl font-bold">Alumni</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-secondary">
+            <path d="M9.653 16.915l-.005-.003-.019-.01a20.759 20.759 0 01-1.162-.682 22.045 22.045 0 01-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 018-2.828A4.5 4.5 0 0118 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 01-3.744 2.582l-.019.01-.005.003h-.002a.739.739 0 01-.69.001l-.002-.001z" />
+            </svg>
+            <p class="text-2xl font-bold">Fazztrack</p>
+         </div>
+         <p class="text-slate-700 text-center md:text-left">Testimoni alumni Fazztrack tentang bootcamp dan penyaluran kerja yang sudah mereka ikuti.</p>
+   
       </section>
       
    </main>
@@ -92,6 +116,8 @@
    import cardSvg from '@/assets/json/dummy/cardSvg'
    import mitra from '@/assets/json/dummy/mitra'
    import CardSelectBootcampComponent from '@/components/CardSelectBootcampComponent.vue'
+   import CardSuperiorityComponent from '@/components/CardSuperiorityComponent.vue'
+   
 export default{
       data() {
          return {
@@ -106,30 +132,53 @@ export default{
             title:"Fullstack Mobile",
             image:"fullstackMobile.png",
             desc: "Mempelajari bagaimana membangun aplikasi mobile dengan Javascript dari tahap perancangan selama 3 bulan pembelajaran secara online."
-         },
-         {
+         }, {
             title:"Fullstack Website",
             image:"fullstackWebsite.png",
             desc:"Mempelajari bagaimana membangun aplikasi website dari tahap perancangan sampai testing selama 3 bulan pembelajaran secara online."
-         },
-         {
+         }, {
             title:"Backend Javaspring",
             image:"backendJavaspring.png",
             desc:"Membangun aplikasi fullstack dengan React serta Spring Boot sebagai backend selama 3 bulan pembelajaran secara online."
-         },
-         {
+         }, {
             title:"Backend Golang",
             image:"backendGolang.png",
             desc:"Membangun aplikasi fullstack dengan Javascript dan Golang serta otomasi sistem untuk membantu proses development lebih cepat."
          }
       ]
 
+      const superiorityArr = [
+         {
+            title:"Dapat Kerja Lebih Cepat",
+            image:"benefit.svg",
+            desc:"Selain menjamin lulus bootcamp, Fazztrack menjamin lulusan disalurkan kerja dengan dibekali pelatihan hard skill dan soft skill serta konsultasi karir untuk mendukung kesuksesan karir."
+         }, {
+            title:"Cicil Setelah Kerja",
+            image:"benefit-2.svg",
+            desc:"Fazztrack mempunyai program Income Share Agreement dimana lulusan tak perlu membayar sebelum diterima kerja dan lulusan akan mendapat gaji minimal sesuai standard yang sudah ditentukan."
+         }, {
+            title:"Ulang Kelas Gratis", 
+            image:"benefit-3.svg",
+            desc:"Fazztrack mengharuskan semua peserta dapat mencapai standard industri, sehingga Fazztrack akan selalu memfasilitasi setiap peserta untuk terus belajar sampai memenuhi standar industri dan siap kerja"
+         }, {
+            title:"Kurikulum Standard Industri",
+            image:"benefit-4.svg",
+            desc:"Kurikulum yang disusun sesuai dengan standar industri yang dapat dipelajari oleh peserta bootcamp dengan background apapun. Dibimbing langsung oleh mentor yang berpengalaman.."
+         }, {
+            title:"Supportive Trainer",
+            image:"benefit-5.svg",
+            desc:"Trainer Fazztrack selalu membantu selama proses belajar, termasuk 1 on 1 mentoring untuk memastikan peserta bootcamp mendapat pengalaman belajar terbaik selama Fazztrack."
+         }
+      ]
+
          return {
-         curicurumArr
+         curicurumArr,
+         superiorityArr
       };
    },
    components: { 
-      CardSelectBootcampComponent
+      CardSelectBootcampComponent,
+      CardSuperiorityComponent
    }
 }
 </script>

@@ -1,8 +1,10 @@
 <template>
-    <div class="w-full md:w-64 pb-10">
-        <img :src="require(`@/assets/img/${image}`)" class="object-none object-center w-full h-52 md:w-64 rounded-md" alt="logo">
-        <p class="text-lg font-bold pt-3">{{title}}</p>
-        <p class="w-full lg:w-64 text-sm text-slate-700">{{desc}}</p>
+    <div class="bg-white w-full md:w-72 h-64 p-5 rounded-md mt-5 md:mt-0">
+       <div class="flex items-center">
+        <img :src="require(`@/assets/svg/${image}`)" alt="logo" class="pr-3">
+        <p class="font-bold w-40">{{title}}</p>
+       </div>
+       <p class="text-sm pt-4 text-slate-700">{{desc}}</p>
         <div class="relative">
             <div class="absolute -bottom-10 ">
                 <div class="flex w-36 justify-between text-secondary cursor-pointer">
@@ -16,12 +18,13 @@
     </div>
 </template>
 
+
 <script>
-    export default{
-        name: 'CardSelectBootcampComponent',
+    export default {
+        name:"CardSuperiority",
         props:{
-            image : String,
             title: String,
+            image: String,
             desc: String
         }
     }
