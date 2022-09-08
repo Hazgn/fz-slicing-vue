@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white w-full md:w-80 lg:w-[520px] p-5 rounded-md mt-5 md:mt-5">
+    <div class="bg-white w-full md:w-[360px] lg:w-[520px] p-5 rounded-md mt-5 md:mt-5">
         <p class="text-sm text-slate-700">{{desc}}</p>
         <div class="pt-2 flex items-center">
             <img :src="require(`@/assets/img/alumni/${image}`)" alt="profile" class="rounded-full h-10 w-10 mb-2">
@@ -11,9 +11,9 @@
                     <div class="flex">
                         <p class="text-sm font-bold mr-1">{{name}}</p>
                         <div class="flex text-slate-700">
-                        <p class="pr-1">(</p>
-                            <img :src="require('@/assets/img/instagram.png')" alt="logo">
-                        <p class="pl-1">{{instagram}} )</p>
+                        <p class="pr-1 text-sm">(</p>
+                            <img :src="require('@/assets/img/instagram.png')" alt="logo" class="h-5 w-5">
+                        <p class="pl-1 text-sm">{{instagram}} )</p>
                         </div>
                     </div>
                     <p class="text-sm text-slate-700">{{works}}</p>

@@ -109,12 +109,16 @@
       
             <div class="md:flex justify-between flex-wrap">
                <div v-for="(data, idx) in alumni" :key="idx">
-                  <!-- <img :src="require(`@/assets/img/alumni/${data.image}`)" alt=""> -->
                   <CardAlumniComponent :name="data.name" :instagram="data.instagram" :image="data.image" :desc="data.desc" :works="data.works"   />
                </div>
             </div>
-
             
+      </section>
+
+      <section>
+         <div>
+            <p>Cerita Alumni Bootcamp</p>
+         </div>
       </section>
       
    </main>
