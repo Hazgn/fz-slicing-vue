@@ -1,7 +1,9 @@
 <template>
     <header class="sticky top-0 z-10 bg-white shadow-md p-[16px] lg:px-20 lg:pt-7 lg:pb-7">
         <div class="flex items-center justify-between">
-            <img :src="Image" alt="logo" />
+            <RouterLink to="/" v-on:click="hamburgerToggler=false">
+                <img :src="Image" alt="logo" class="cursor-pointer"/>
+            </RouterLink>
             <div class="flex items-center absolute right-5">
                 <button class="lg:hidden" :class="{'hamburger-active' : hamburgerToggler}" v-on:click="hamburgerToggler=!hamburgerToggler">
                     <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
@@ -28,7 +30,7 @@
                                         <li class="mt-5 text-slate-700 cursor-pointer">Digital Marketing</li>
                                         <li class="mt-5 text-slate-700 cursor-pointer">QA Automation Engineer</li>
                                         <li class="mt-5 text-slate-700 cursor-pointer">Kelas Persiapan Bootcamp</li>
-                                        <li class="mt-5 text-slate-700 cursor-pointer">Lihat Semua</li>
+                                        <RouterLink to="/minicamp" v-on:click="isClass=false, isAbout=false, isSupport=false, hamburgerToggler=false"><li class="mt-5 text-slate-700 cursor-pointer">Lihat Semua</li></RouterLink>
                                     </ul>
                                     <ul class="p-5 text-slate-400">
                                         <p>Video Belajar</p>

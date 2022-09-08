@@ -78,7 +78,7 @@
                   <p class="font-bold text-center pt-4 md:pt-0 md:text-left md:text-xl lg:text-2xl">Tidak memiliki banyak waktu?</p>
                   <p class="text-center text-sm pt-4 text-slate-700 md:text-left md:text-xl md:pb-4 md:w-[90%]">Coba program terbaru Fazztrack Mini Bootcamp! Belajar dengan menyesuaikan waktumu dan bisa langsung disalurkan kerja.</p>
                   <div class="flex justify-center md:inline pt-4">
-                     <button class="bg-primary p-3 rounded-md text-sm text-white hover:bg-[#2557a7]">Lihat Mini Bootcamp</button>
+                     <button class="bg-primary p-3 rounded-md text-sm text-white hover:bg-[#2557a7]" v-on:click="minicampHandler">Lihat Mini Bootcamp</button>
                   </div>
                </div>
             </div>
@@ -135,7 +135,7 @@
          <p class="text-center text-xl text-slate-700">Bootcamp dilaksanakan berdasarkan kurikulum yang telah disusun untuk kamu siap bekerja.</p>
          
          <div class="border-2 p-5 rounded-md shadow-md mt-5 cursor-pointer transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 z-10" v-on:click="isCondition=!isCondition, isHiring=false, isStages=false, isProsesCov=false, isTrain=false" :class="{'bg-primary' : isCondition}">
-            <div class="flex justify-between">
+            <div class="flex justify-between items-center">
                <p class="font-bold" :class="{'text-white' : isCondition}">Syarat untuk mengikuti program pelatihan Fazztrack apa saja kak?</p>
                <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 text-white' : isCondition}" />
             </div>
@@ -150,7 +150,7 @@
          </div>
 
          <div class="border-2 p-5 rounded-md shadow-md mt-5 cursor-pointer transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 z-10" v-on:click="isStages=!isStages, isCondition=false, isHiring=false, isProsesCov=false, isTrain=false" :class="{'bg-primary' : isStages}">
-            <div class="flex justify-between">
+            <div class="flex justify-between items-center">
                <p class="font-bold" :class="{'text-white' : isStages}">Bagaimana tahapan program pelatihan ini?</p>
                <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 text-white' : isStages}" />
             </div>
@@ -162,7 +162,7 @@
          </div>
 
          <div class="border-2 p-5 rounded-md shadow-md mt-5 cursor-pointer transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 z-10" v-on:click="isTrain=!isTrain, isCondition=false, isHiring=false, isStages=false, isProsesCov=false" :class="{'bg-primary' : isTrain}">
-            <div class="flex justify-between">
+            <div class="flex justify-between items-center">
                <p class="font-bold" :class="{'text-white' : isTrain}">Sistem tesnya bagaimana kak?</p>
                <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 text-white' : isTrain}" />
             </div>
@@ -174,8 +174,8 @@
          </div>
 
          <div class="border-2 p-5 rounded-md shadow-md mt-5 cursor-pointer transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 z-10" v-on:click="isHiring=!isHiring, isCondition=false, isStages=false, isProsesCov=false, isTrain=false" :class="{'bg-primary' : isHiring}">
-            <div class="flex justify-between">
-               <p class="font-bold" :class="{'text-white' : isHiring}">Bagaimana proses penyaluran kerja di Fazztrack?</p>
+            <div class="flex justify-between items-center">
+               <p class="font-bold w-64" :class="{'text-white' : isHiring}">Bagaimana proses penyaluran kerja di Fazztrack?</p>
                <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 text-white' : isHiring}" />
             </div>
             <div v-if="isHiring" class="pt-5">
@@ -186,7 +186,7 @@
          </div>
 
          <div class="border-2 p-5 rounded-md shadow-md mt-5 cursor-pointer transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 z-10" v-on:click="isProsesCov=!isProsesCov, isCondition=false, isHiring=false, isStages=false, isTrain=false" :class="{'bg-primary' : isProsesCov}">
-            <div class="flex justify-between">
+            <div class="flex justify-between items-center">
                <p class="font-bold" :class="{'text-white' : isProsesCov}">Bagaimana proses pelatihan saat pandemi COVID-19?</p>
                <ArrowDownComponent class="arrow-down transition-all duration-300" :class="{'-rotate-180 text-white' : isProsesCov}" />
             </div>
@@ -220,6 +220,7 @@
    import CardAlumniComponent from '@/components/CardAlumniComponent.vue'
    import CardStoryAlumniComponent from '@/components/CardStoryAlumniComponent.vue'
    import ArrowDownComponent from '@/components/ArrowDownComponent.vue'
+   import { useRouter } from 'vue-router'
 export default{
       data() {
          return {
@@ -234,6 +235,7 @@ export default{
          };
       },
       setup() {
+      const router = useRouter()
 
       const curicurumArr = [
          {
@@ -295,10 +297,17 @@ export default{
          }
       ]
 
+      const minicampHandler = () => {
+         router.push({
+            name:'minicamp'
+         })
+      }
+
          return {
          curicurumArr,
          superiorityArr,
-         alumniStorysArr
+         alumniStorysArr,
+         minicampHandler
       };
    },
    components: { 

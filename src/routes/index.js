@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
+import MiniCampView from '@/views/MiniCampView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 
 const routes = createRouter({
@@ -13,8 +14,14 @@ const routes = createRouter({
             meta: {
                 title: 'Bootcamp Coding Online | Ubah Hidupmu Bersama Fazztrack',
             }
-        },
-        {
+        }, {
+            path: '/minicamp',
+            name: 'minicamp',
+            component: MiniCampView,
+            meta: {
+                title: 'Mini Bootcamp Fazztrack'
+            }
+        }, {
             path: '/:pathMatch(.*)*',
             name: 'not-found',
             component: NotFoundView,
