@@ -128,6 +128,9 @@
                <CardStoryAlumniComponent :image="data.image" :title="data.title" :desc="data.desc" />
             </div>
          </div>
+         <div class="flex justify-center">
+            <button class="border-2 p-4 text-sm text-slate-800 font-bold lg:hidden mt-10">Lihat Selengkapnya</button>
+         </div>
       </section>
 
       <section class="p-5 lg:p-20">

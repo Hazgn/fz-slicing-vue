@@ -34,8 +34,9 @@
                                     </ul>
                                     <ul class="p-5 text-slate-400">
                                         <p>Video Belajar</p>
-                                        <li class="mt-5 text-slate-700 cursor-pointer">Lihat Semua</li>
-                                    </ul>
+                                        <RouterLink to="/modul-belajar" v-on:click="isClass=false, isAbout=false, isSupport=false, hamburgerToggler=false">
+                                            <li class="mt-5 text-slate-700 cursor-pointer">Lihat Semua</li>
+                                        </RouterLink>                                    </ul>
                                 </div>
                             <li class="list-nav" v-on:click="isSupport=!isSupport, isClass=false, isAbout=false">
                                 <p>Dukungan</p>
