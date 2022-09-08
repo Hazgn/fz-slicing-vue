@@ -106,7 +106,15 @@
             <p class="text-2xl font-bold">Fazztrack</p>
          </div>
          <p class="text-slate-700 text-center md:text-left">Testimoni alumni Fazztrack tentang bootcamp dan penyaluran kerja yang sudah mereka ikuti.</p>
-   
+      
+            <div class="md:flex justify-between flex-wrap">
+               <div v-for="(data, idx) in alumni" :key="idx">
+                  <!-- <img :src="require(`@/assets/img/alumni/${data.image}`)" alt=""> -->
+                  <CardAlumniComponent :name="data.name" :instagram="data.instagram" :image="data.image" :desc="data.desc" :works="data.works"   />
+               </div>
+            </div>
+
+            
       </section>
       
    </main>
@@ -115,14 +123,17 @@
 <script>
    import cardSvg from '@/assets/json/dummy/cardSvg'
    import mitra from '@/assets/json/dummy/mitra'
+   import alumni from '@/assets/json/dummy/alumni'
    import CardSelectBootcampComponent from '@/components/CardSelectBootcampComponent.vue'
    import CardSuperiorityComponent from '@/components/CardSuperiorityComponent.vue'
-   
+   import CardAlumniComponent from '@/components/CardAlumniComponent.vue'
+
 export default{
       data() {
          return {
             cardSvg,
-            mitra
+            mitra,
+            alumni
          };
       },
       setup() {
@@ -178,7 +189,8 @@ export default{
    },
    components: { 
       CardSelectBootcampComponent,
-      CardSuperiorityComponent
+      CardSuperiorityComponent,
+      CardAlumniComponent,
    }
 }
 </script>
