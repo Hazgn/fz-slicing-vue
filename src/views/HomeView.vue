@@ -89,10 +89,10 @@
       <div class="p-5 lg:p-20 md:flex flex-wrap md:justify-between">
             <div>
                <p class="text-white font-bold text-center md:text-left md:text-2xl">Keunggulan Fazztrack</p>
-               <p class="text-white text-sm text-center md:text-left md:text-xl md:w-60">Bootcamp Fazztrack akan membimbing kamu menjadi Software Engineer profesional sampai di salurkan kerja.</p>
+               <p class="text-white text-sm text-center md:text-left md:text-xl w-full md:w-72">Bootcamp Fazztrack akan membimbing kamu menjadi Software Engineer profesional sampai di salurkan kerja.</p>
             </div>
                <div v-for="(data, idx) in superiorityArr" :key="idx" :class="idx >= 2 ? 'md:mt-5' : ''">
-                  <CardSuperiorityComponent :title="data.title" :image="data.image" :desc="data.desc" :class="idx === 3 ? 'mr-10' : ''"  />
+                  <CardSuperiorityComponent :title="data.title" :image="data.image" :desc="data.desc"   />
                </div>
             </div>
       </section>
