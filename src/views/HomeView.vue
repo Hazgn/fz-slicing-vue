@@ -115,10 +115,19 @@
             
       </section>
 
-      <section>
-         <div>
-            <p>Cerita Alumni Bootcamp</p>
+      <section class="p-5 lg:p-20">
+         <div class="md:flex items-center justify-between">
+            <div>
+               <p class="text-2xl font-bold text-center md:text-left">Cerita Alumni Bootcamp</p>
+               <p class="text-xl text-slate-700 text-center md:text-left">Cerita perjalanan heroik alumni bootcamp Fazztrack</p>
+            </div>
+            <button class="border-2 p-4 text-sm text-slate-800 font-bold hidden lg:inline">Lihat Selengkapnya</button>
          </div>
+        <div class="lg:flex justify-between">
+            <div v-for="(data, idx) in alumniStorysArr" :key="idx">
+               <CardStoryAlumniComponent :image="data.image" :title="data.title" :desc="data.desc" />
+            </div>
+        </div>
       </section>
       
    </main>
@@ -131,7 +140,7 @@
    import CardSelectBootcampComponent from '@/components/CardSelectBootcampComponent.vue'
    import CardSuperiorityComponent from '@/components/CardSuperiorityComponent.vue'
    import CardAlumniComponent from '@/components/CardAlumniComponent.vue'
-
+   import CardStoryAlumniComponent from '@/components/CardStoryAlumniComponent.vue'
 export default{
       data() {
          return {
@@ -186,15 +195,33 @@ export default{
          }
       ]
 
+      const alumniStorysArr = [ 
+         {
+            title:"Lulusan Pesantren juga Bisa jadi DevOps Engineer",
+            image:"afsana.png",
+            desc:"Afsana lulusan pesantren dari Semarang bercita-cita sebagai Software Engineer sempat kesulitan membagi waktu antara mengaji, belajar akademik, dan belajar programming. Dengan kegigihanya Afsana mengikuti bootcamp Fazztrack sampai akhirnya dia menjadi Devops Engineer."
+         }, {
+            title:"Rela Drop Out Demi Mengejar Cita-Cita jadi Programmer",
+            image:"shafa.png",
+            desc:"Melihat adanya peluang lebih besar sebagai female Software Engineer, Shafa memilih dropout dan mengikuti pelatihan intensif dan mentoring di Fazztrack. Bekal ilmu yang didapat dari Fazztrack mengantarkannya menjadi Frontend Engineer."
+         }, {
+            title:"Kata Siapa Fresh Graduate Susah Dapat Kerja? Ini Buktinya",
+            image:"tresna.png",
+            desc:"Tresna, fresh graduate yang menemukan jalan ninjanya melalui Fazztrack. Disaat fresher graduate lainnya mengalami kesulitan dalam mencari pekerjaan, Tresna mengambil bootcamp Devops Engineer. Sekarang Tresna menjadi Devops Engineer di Gramedia."
+         }
+      ]
+
          return {
          curicurumArr,
-         superiorityArr
+         superiorityArr,
+         alumniStorysArr
       };
    },
    components: { 
       CardSelectBootcampComponent,
       CardSuperiorityComponent,
       CardAlumniComponent,
+      CardStoryAlumniComponent
    }
 }
 </script>
