@@ -123,11 +123,11 @@
             </div>
             <button class="border-2 p-4 text-sm text-slate-800 font-bold hidden lg:inline">Lihat Selengkapnya</button>
          </div>
-        <div class="lg:flex justify-between">
+         <div class="lg:flex justify-between">
             <div v-for="(data, idx) in alumniStorysArr" :key="idx">
                <CardStoryAlumniComponent :image="data.image" :title="data.title" :desc="data.desc" />
             </div>
-        </div>
+         </div>
       </section>
       
    </main>
